@@ -8,6 +8,11 @@ pip install requirements.txt
 ```
 Note that I use Manim (https://github.com/ManimCommunity/manim) for the vizualisations. Manim is a community-maintained Python framework for creating mathematical animations originally developed by Grant Sanderson. I have used it in the past for some science communication animations so I decided to use it again for this project.
 
+Note if there are any issues with the manim installation its usually due to the fact that Anaconda environments come with their own preinstalled version of cairo which is not compatible with the version of pycairo required by Manim. Usually it can be fixed by running:
+
+```
+conda install -c conda-forge pycairo
+```
 ## Initial testing
 The notebook ```Testing_notebook.ipynb``` can be ignored. It was created to get a feel for the problem and test out the build orders.
 
@@ -29,7 +34,7 @@ This algorithm tries to minimize the number of times moving up/down by building 
 ```
 manim -pql --renderer=opengl optimal_interactive_bricks.py InteractiveBricksScene
 ```
-Note that this built pattern is highly speculative. I was atempting to make sure that there always was a stable row beneath each brick being laid down. 
+Note that this built pattern is highly speculative. I was atempting to make sure that there always was a stable row beneath each brick being laid down. See the final product in ```final_built_wall.jpeg```.
 
 ## To Do
 - Try out the bonus exercises with English Cross Bond or wild bond pattern.
