@@ -1,40 +1,44 @@
 # Monumental take-home assignment
-Repository to create a masonary wall with a 4-DOF robotic crane.
+This repository contains a simulation of a 4-DOF robotic crane building a masonry wall, including visualizations of different build strategies.
 
 ## Install the requirements
-Install the ```requirements.txt``` note that it is assumed you already have python installed on your machine.
+Make sure you have Python installed, then install the required dependencies:
+```bash
+pip install -r requirements.txt
 ```
-pip install requirements.txt
-```
-Note that I use Manim (https://github.com/ManimCommunity/manim) for the vizualisations. Manim is a community-maintained Python framework for creating mathematical animations originally developed by Grant Sanderson. I have used it in the past for some science communication animations so I decided to use it again for this project.
+Note: This project uses Manim, a Python framework for creating mathematical animations originally developed by Grant Sanderson. I’ve used Manim previously for science communication animations, and chose it again for this project due to its flexibility and rendering quality.
 
-Note if there are any issues with the manim installation its usually due to the fact that Anaconda environments come with their own preinstalled version of cairo which is not compatible with the version of pycairo required by Manim. Usually it can be fixed by running:
-
+If you encounter issues with Manim, they are often related to Cairo incompatibilities in Anaconda environments. You can usually resolve this with:
 ```
 conda install -c conda-forge pycairo
 ```
 ## Initial testing
-The notebook ```Testing_notebook.ipynb``` can be ignored. It was created to get a feel for the problem and test out the build orders.
+The notebook ```Testing_notebook.ipynb``` contains exploratory tests for understanding the problem and experimenting with build orders. It is not essential for running the main code.
 
 ## First_brick_exercise.py
-This is the first brick exercise which dynamically calculates the number of full/half bricks that fit on a wall. It also outputs the built wall using ASCII art on the terminal. It can be run with the following command:
+This script calculates how many full and half bricks fit in a wall based on its dimensions. It outputs the result as ASCII art in the terminal.
+
+Run with:
 ```
 python first_brick_exercise.py
 ```
 
 ## interactive_bricks.py
-This exercise adds some interaction to the build. It allows you to build up the wall brick by brick from bottom to top by adding a ‘built’ brick on every press of the ENTER key. It can be run with the following command:
+This script introduces basic interactivity. Pressing the ```ENTER``` key builds the wall one brick at a time from bottom to top. Each brick is added to the visual scene incrementally.
+
 ```
 manim -pql --renderer=opengl interactive_bricks.py InteractiveBricksScene
 ```
 
 ## optimal_interactive_bricks.py
-This algorithm tries to minimize the number of times moving up/down by building the wall in a zigzag type pattern. Each build order has its own color to seperate when we move the robot. It can be run with the following command:
+This version attempts to optimize the build sequence by minimizing vertical movement using a zigzag/triangular pattern. Each build order is shown in a different color to indicate crane movement phases.
+
+Run with:
 
 ```
 manim -pql --renderer=opengl optimal_interactive_bricks.py InteractiveBricksScene
 ```
-Note that this built pattern is highly speculative. I was atempting to make sure that there always was a stable row beneath each brick being laid down. See the final product in ```final_built_wall.jpeg```.
+This build strategy is speculative. It assumes that each brick must always rest on a stable row beneath it. See the resulting structure in ```final_built_wall.jpeg```.
 
 ## To Do
-- Try out the bonus exercises with English Cross Bond or wild bond pattern.
+-  Explore bonus exercises: English Cross Bond or wild bond pattern.
