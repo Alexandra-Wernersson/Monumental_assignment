@@ -112,8 +112,7 @@ class InteractiveBricksScene(Scene):
         self.build_logic.add_build_order([8, 9, 10, 18, 19, 20, 21, 29, 30, 31, 32, 40, 41, 42, 43, 52, 53, 54, 63, 64, 65, 75, 76, 86, 87, 98, 109], label="order_3")
         self.build_logic.add_build_order([25, 36,   37,   38, 39,  
                    48,   49,   50,   
-                  59,   60,   
-                    71,    ], label="order_4")
+                  59,   60 ], label="order_4")
         self.build_logic.add_build_order([35,   36,   
                   46,   47,   
                   56,   57,   58,
@@ -146,7 +145,7 @@ class InteractiveBricksScene(Scene):
             self.build_logic.add_build_order(next_order, label=next_label)
         
         # Last build orders are a bit special so I add them manually
-        self.build_logic.add_build_order([268, 270, 278, 279, 280, 281, 289, 290, 291, 292], label = "order_22")
+        self.build_logic.add_build_order([268, 269, 270, 278, 279, 280, 281, 289, 290, 291, 292], label = "order_22")
         self.build_logic.add_build_order([293, 304, 316, 327, 339, 350, 351, 303, 315, 326, 338, 349], label="order_23")
         self.build_logic.add_build_order([289, 302, 301, 313, 314, 324, 325, 336, 337, 347, 348], label="order_24")   
         self.build_logic.add_build_order([299, 300, 310, 311,  320, 321,  331, 332,   341, 342 ], label="order_25")
