@@ -49,13 +49,13 @@ class Bricks_Calculate_Visualize():
             Number_brick_bedjoint = self.max_height/self.height_brick_bedjoint
         else:
         #Only case it doesn't match is when you end on a brick
+            number_bricks_bedjoint = (self.max_height-self.height_bedjoint)/self.height_brick_bedjoint + 1
             
-            Number_brick_bedjoint = (self.max_height-self.height_bedjoint)/self.height_brick_bedjoint + 1
-        Total_number_of_fullbricks = number_full_bricks_headjoint*Number_brick_bedjoint
+        Total_number_of_fullbricks = number_full_bricks_headjoint*number_bricks_bedjoint
         Total_number_of_halfbricks = self.max_height/self.height_brick_bedjoint
         Total_number_of_bricks = Total_number_of_fullbricks + Total_number_of_halfbricks
         
-        return Number_brick_bedjoint, number_full_bricks_headjoint, Total_number_of_fullbricks, Total_number_of_halfbricks, Total_number_of_bricks
+        return number_bricks_bedjoint, number_full_bricks_headjoint, Total_number_of_fullbricks, Total_number_of_halfbricks, Total_number_of_bricks
 
     def visualize_bricks(self):
         visualize_height = int(self.calculate_bricks()[0] / 2)
