@@ -46,7 +46,7 @@ class Bricks_Calculate_Visualize():
     
         # Calculate the height
         if self.max_height % self.height_brick_bedjoint ==0:
-            Number_brick_bedjoint = self.max_height/self.height_brick_bedjoint
+            number_bricks_bedjoint = self.max_height/self.height_brick_bedjoint
         else:
         #Only case it doesn't match is when you end on a brick
             number_bricks_bedjoint = (self.max_height-self.height_bedjoint)/self.height_brick_bedjoint + 1
